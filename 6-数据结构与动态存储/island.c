@@ -5,8 +5,10 @@
 
 // 这里使用字符指针而不是字符数组，以为字符指针不会限制字符串的长度
 island *create(char *name) {
+  // 会在heap创建一个新的island struct
   island *i = (island *) malloc(sizeof(island));
-  // 为了防止出错，必须复制name数组，因为后面的代码可能修改它
+  // 如果传入的name是字符数组，则它有可能在别处被修改
+  // 为了防止出错，必须复制name数组
   i->name = strdup(name);
   i->opens = "09:00";
   i->closes = "17:00";

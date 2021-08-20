@@ -11,11 +11,15 @@ int main() {
   craggy.next = &isla_nublar;
   isla_nublar.next = &shutter;
 
-  char * name = "hello";
+  char name[] = "hello";
   island *p_island0 = create(name);
   shutter.next = p_island0;
 
   display(&amity);
 
-  release(&amity);
+  name[0] = 'N';
+
+  display(&amity);
+
+  // release(&amity);
 }
