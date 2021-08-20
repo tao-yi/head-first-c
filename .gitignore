@@ -1,2 +1,3 @@
 .vscode
-monte.dSYM
+*.dSYM
+main
